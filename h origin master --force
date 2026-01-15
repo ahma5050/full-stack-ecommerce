@@ -1,0 +1,23 @@
+[33mcommit e8a6fd94bbdade3f411b08fb095f34574b1410fa[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m)[m
+Author: ahmed <tekisha5050@gmail.com>
+Date:   Mon Jan 12 12:26:13 2026 +0300
+
+    Add .env.example & payment process
+
+[33mcommit bfe875f22cde3b689bba9bfee685772ac561df5f[m
+Author: ahmed <tekisha5050@gmail.com>
+Date:   Mon Jan 12 12:03:35 2026 +0300
+
+    payment process
+
+[33mcommit 398772fb9802fb5ed7a5569c3a24920da73a9b67[m
+Author: ahmed <tekisha5050@gmail.com>
+Date:   Fri Jan 9 09:05:46 2026 +0300
+
+    payment process
+
+[33mcommit 76c596ebd9daf197db70b818954136fc494885d3[m
+Author: ahmed <tekisha5050@gmail.com>
+Date:   Thu Jan 8 09:12:44 2026 +0300
+
+    initial commit
