@@ -414,3 +414,13 @@ If you want to update your branch with the latest main changes some chage come f
 "backend/.env" 
 "backend/node_module/" 
 .env
+
+# if still trcked .env do it in step 
+# git filter-branch --force --index-filter "git rm --cached --ignore-unmatch .env backend/.env" --prune-empty --tag-name-filter cat -- --all
+# git reflog expire --expire=now --all
+# git gc --prune=now --aggressive
+# git push origin main --force
+ 
+#  git rm --catched backend/.env
+#  git commit -m "never trace .env"
+
