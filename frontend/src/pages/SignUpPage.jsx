@@ -3,17 +3,20 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { UserPlus, Mail, Lock, User, ArrowRight, Loader } from "lucide-react";
 import { motion } from "framer-motion";
+import { useUserStore } from '../stores/useUserStore';
 const SignUpPage = () => {
-    const loading=true;
+    
     const [formData, setFormDat]=useState({
         name:'',
         email:'',
         password:'',
         confirmPassword:'',
     });
+    const {signup, loading}=useUserStore();
      console.log(formData)
     const handleSubmit=(e)=>{
         e.preventDefault();
+        signup(formData)
         console.log(formData)
     }
   return (
@@ -127,7 +130,7 @@ const SignUpPage = () => {
 						</button>
           </form>
           <p className='mt-8 text-center text-sm text-gray-400'>
-						Already have an account?{" "}
+						Already have an account? {""}
 						<Link to='/login' className='font-medium text-emerald-400 hover:text-emerald-300'>
 							Login here <ArrowRight className='inline h-4 w-4' />
 						</Link>
