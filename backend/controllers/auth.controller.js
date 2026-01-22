@@ -102,6 +102,8 @@ try {
 		if (refreshToken) {
 			const decoded = jwt.verify(refreshToken, process.env.REFRESH_TOKEN_SECRET);
 		  await redis.del(`refresh_token:${decoded.userId}`);
+      console.log('............', decoded);
+    
 		}
 
 		res.clearCookie("accessToken");
