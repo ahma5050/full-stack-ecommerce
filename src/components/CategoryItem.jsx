@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 
 const CategoryItem = ({ category }) => {
+	
 	return (
 		<div className='relative overflow-hidden h-96 w-full rounded-lg group'>
 			<Link to={"/category" + category.href}>
@@ -17,10 +18,15 @@ const CategoryItem = ({ category }) => {
 						<p className='text-gray-200 text-sm'>Explore {category.name}</p>
 					</div>
 				</div>
+				
 			</Link>
+			
 		</div>
+		
 	);
+	
 };
+
 
 export default CategoryItem;
 

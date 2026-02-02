@@ -9,7 +9,9 @@ export const useProductStore = create((set) => ({
   createProduct: async (productData) => {
     set({ loading: true });
     try {
-      const res = await axios.post('/products', productData);
+      const res = await axios.post('/products', productData, {
+      headers: { "Content-Type": "multipart/form-data" },
+    } );
       set((prevState) => ({
         products: [...prevState.products, res.data],
         loading: false,
@@ -33,6 +35,18 @@ console.log('Products fetched:',res.data.products);
         toast.error(error.res?.data.message || 'error is occured while fetching products');
         
     }
+}, 
+
+fetchProductsByCategory: async(category)=>{
+    set({loading:true});
+    try{
+const res=await axios.get(`/products/category/${category}`)
+set({products:res?.data?.products, loading:false})
+console.log(`Products fetched for category ${category}:`,res.data.products);
+    }catch(error){
+        set({loading:false, error:'error occurred while fetching products by category'});
+        toast.error(error.res?.data.message || 'error is occured while fetching products by category');
+}
 },
 
 	toggleFeaturedProduct: async (productId) => {

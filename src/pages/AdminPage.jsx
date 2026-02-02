@@ -45,7 +45,7 @@ const AdminPage = () => {
         {activeTab === 'analytics' && <AnalyticsDashboard />}
       </div>
     </div>
-  )
+  )    
 }
 
 export default AdminPage

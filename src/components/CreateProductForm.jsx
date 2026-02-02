@@ -5,7 +5,7 @@ import { useState } from 'react'
 import { useProductStore } from '../stores/useProductStore';
 
 
-const categories = ["jeans", "T-shirts", "shoes", "glasses", "jackets", "bag"];
+const categories = ["jeans", "T-shirts", "shoes", "glasses", "jackets", "bag", "suits"];
 const CreateProductForm = () => {
   const [newProduct, setNewProduct] = useState({
     name: '',
@@ -21,17 +21,14 @@ const CreateProductForm = () => {
     e.preventDefault();
     createProduct(newProduct);
   }
-  const handleImageChange=(e)=>{
-    const file=e.target.files[0]
-    if(file){
-      const reader=new FileReader();
-      reader.onloadend=()=>{
-        setNewProduct({...newProduct, image:reader.result})
-      }
-      reader.readAsDataURL(file);
-    }
-
+const handleImageChange = (e) => {
+  const file = e.target.files[0];
+  if (file) {
+    // Store the file object directly
+    setNewProduct({ ...newProduct, image: file });
   }
+};
+
 
   
   return (
